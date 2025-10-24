@@ -400,3 +400,4 @@ C:\Users\lucas\Desktop\API-PROYECTO\webapicsharp\obj\Debug\net9.0\refint\webapic
 C:\Users\lucas\Desktop\API-PROYECTO\webapicsharp\obj\Debug\net9.0\webapicsharp.pdb
 C:\Users\lucas\Desktop\API-PROYECTO\webapicsharp\obj\Debug\net9.0\webapicsharp.genruntimeconfig.cache
 C:\Users\lucas\Desktop\API-PROYECTO\webapicsharp\obj\Debug\net9.0\ref\webapicsharp.dll
+C:\Users\lucas\Desktop\API-PROYECTO\webapicsharp\obj\Debug\net9.0\webapicsharp.sourcelink.json
