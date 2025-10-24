@@ -11,31 +11,21 @@
     <form method="post"
           action="{{ url_for('rutas_producto_entregable.crear_producto_entregable') if modo == 'crear' else url_for('rutas_producto_entregable.actualizar_producto_entregable') }}">
 
-      {% if modo == 'actualizar' %}
-      <div class="campo">
-        <label>ID Producto</label>
-        <input type="text" name="id_producto" value="{{ asociacion.id_producto }}" readonly>
-      </div>
-      {% else %}
+        
       <div class="campo">
         <label>Producto</label>
         <select name="id_producto" required>
           <option value="">Seleccione un producto</option>
-          {% for prod in productos %}
-            <option value="{{ prod.id }}" {% if asociacion and asociacion.id_producto == prod.id %}selected{% endif %}>
-              {{ prod.id }} - {{ prod.titulo if prod.titulo else "Producto " ~ prod.id }}
+          {% for pp in productos %}
+            <option value="{{ pp.id }}"
+              {% if asociacion  and asociacion .id_producto == pp.id %}selected{% endif %}>
+              {{ pp.titulo if pp.titulo else "Producto " ~ pp.id }}
             </option>
           {% endfor %}
         </select>
       </div>
-      {% endif %}
 
-      {% if modo == 'actualizar' %}
-      <div class="campo">
-        <label>ID Entregable</label>
-        <input type="text" name="id_entregable" value="{{ asociacion.id_entregable }}" readonly>
-      </div>
-      {% else %}
+      
       <div class="campo">
         <label>Entregable</label>
         <select name="id_entregable" required>
@@ -47,7 +37,6 @@
           {% endfor %}
         </select>
       </div>
-      {% endif %}
 
       <div class="campo">
         <label>Fecha de Asociación</label>

@@ -157,3 +157,16 @@ input {
   cursor: pointer;
   filter: invert(1);
 }
+
+
+/* ===== Option (Lista desplegable) =====*/
+.campo select, textarea{
+  border-radius: 4px;
+  padding: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
