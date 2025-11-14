@@ -14,6 +14,8 @@ html, body {
     line-height: 1.6;
 }
 
+
+
 /* ------------------------------
    Encabezado y navegación
 --------------------------------*/
@@ -127,68 +129,105 @@ footer {
     margin-top: auto;
     box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
 }
-/* ------------------------------
-   Menús desplegables
---------------------------------*/
+/* ============================
+   SIDEBAR IZQUIERDO
+============================ */
+.sidebar {
+    width: 230px;
+    height: 100vh;
+    background: #0f1a2b;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 20px;
+    overflow-y: auto;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin: 0;
+}
+
+.sidebar-menu > li > a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.sidebar-menu > li > a:hover {
+    background: #1c2a44;
+}
+
+/* ============================
+   DROPDOWNS
+============================ */
 .dropdown {
     position: relative;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #1e293b;
-    min-width: 200px;
-    border-radius: 6px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    z-index: 10;
+.dropdown > a::after {
+    content: " ▼";
+    font-size: 11px;
 }
 
-.dropdown-content li {
-    width: 100%;
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    background: #182538;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .dropdown-content li a {
+    padding: 10px 30px;
     display: block;
-    padding: 10px 15px;
-    color: #e2e8f0;
     text-decoration: none;
-    transition: background-color 0.3s ease, color 0.2s ease;
+    color: #c8d6f0;
+    font-size: 14px;
 }
 
 .dropdown-content li a:hover {
-    background-color: #334155;
-    color: #38bdf8;
+    background: #243652;
+    color: #ffffff;
 }
 
+/* Mostrar dropdown al pasar el mouse */
 .dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Asegura buen espaciado en el menú principal */
-.dropdown-menu {
     display: flex;
-    justify-content: center;
-    gap: 25px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
-.dropdown-menu > li > a {
-    color: #f8fafc;
-    font-weight: 600;
+/* ============================
+   CONTENIDO PRINCIPAL
+============================ */
+.contenido {
+    margin-left: 230px;
+    padding: 20px;
+}
+
+/* ============================
+   FOOTER
+============================ */
+footer {
+    margin-left: 230px;
     padding: 10px;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.2s ease;
+    background: #0f1a2b;
+    color: white;
+    text-align: center;
 }
-
-.dropdown-menu > li > a:hover {
-    color: #38bdf8;
-    transform: translateY(-2px);
-}
+/* ============================
+   IMAGEN DE INICIO
+=============================*/
 .imagen-inicio {
     display: flex;
     justify-content: center;
@@ -302,3 +341,164 @@ body {
     }
 
   
+    /* ============================
+   MENÚ LATERAL IZQUIERDO
+=============================*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background-color: #1e293b;
+    padding-top: 30px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    z-index: 999;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sidebar-menu li a {
+    display: block;
+    color: #f1f5f9;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: background 0.3s ease, padding-left 0.2s ease;
+}
+
+.sidebar-menu li a:hover {
+    background-color: #334155;
+    padding-left: 18px;
+    color: #38bdf8;
+}
+
+/* Dropdown */
+.sidebar .dropdown {
+    position: relative;
+}
+
+.sidebar .dropdown-content {
+    display: none;
+    flex-direction: column;
+    background-color: #1e293b;
+    padding-left: 15px;
+    margin-top: 5px;
+    border-left: 2px solid #38bdf8;
+}
+
+.sidebar .dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+/* Ajuste del contenido principal */
+main.contenido {
+    margin-left: 260px;
+    padding: 40px 20px;
+}
+
+/* --- Reducir escala general de contenido --- */
+main {
+    transform: scale(0.90);        /* ACHICA TODO */
+    transform-origin: top center;  /* Para que no se desplace raro */
+}
+
+/* --- Ajustar ancho de los contenedores --- */
+.container-main {
+    max-width: 1200px;  
+    margin: 0 auto;
+}
+
+/* --- Reducir tamaño del formulario --- */
+.form-card {
+    transform: scale(0.95);
+}
+
+/* --- Reducir tabla: letra + padding --- */
+table {
+    font-size: 13px;
+}
+
+table th, table td {
+    padding: 6px 8px;
+}
+
+/* --- Hacer los encabezados más compactos --- */
+h1, h2, h3 {
+    font-size: 22px;
+}
+
+/* --- Inputs y selects más pequeños --- */
+input, select {
+    height: 35px;
+    font-size: 14px;
+}
+
+/* --- Botones más compactos --- */
+button {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+
+/* =============== LAYOUT GENERAL ================= */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden; /* evita doble scroll */
+}
+
+/* =============== SIDEBAR ===================== */
+.sidebar {
+    width: 240px;
+    background-color: #152238;
+    height: 100vh;              /* Sidebar fijo */
+    position: fixed;            /* Se queda a la izquierda */
+    top: 0;
+    left: 0;
+    overflow-y: auto;           /* Si tiene mucho contenido, scroll SOLO del menú */
+    padding-top: 10px;
+}
+
+/* =============== CONTENIDO PRINCIPAL ===================== */
+.contenido {
+    margin-left: 240px;         /* Corre el contenido para que no quede debajo del sidebar */
+    padding: 20px;
+    width: calc(100% - 240px);
+    height: 100vh;
+    overflow-y: auto;           /* AHORA SÍ hace scroll completo */
+    box-sizing: border-box;
+}
+
+/* =============== FOOTER ===================== */
+footer {
+    width: calc(100% - 240px);
+    margin-left: 240px;
+    text-align: center;
+    padding: 10px;
+    background: #0b132b;
+    color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+/* Evita que el contenido quede escondido detrás del footer */
+.contenido section {
+    padding-bottom: 60px;
+}

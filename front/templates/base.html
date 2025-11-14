@@ -6,10 +6,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
 </head>
 <body>
-    <!-- Menú de navegación principal -->
-    <header>
+
+    <!-- ================================
+         MENÚ LATERAL IZQUIERDO
+    ================================= -->
+    <aside class="sidebar">
         <nav>
-            <ul class="dropdown-menu">
+            <ul class="sidebar-menu">
+
                 {% if session.usuario %}
                 <li><a href="{{ url_for('rutas_login.logout') }}">Cerrar sesión</a></li>
                 {% endif %}
@@ -17,7 +21,7 @@
                 <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
                 <li><a href="{{ url_for('acerca') }}">Acerca</a></li>
 
-                <!-- Ejemplo de menú desplegable -->
+                <!-- Usuarios -->
                 <li class="dropdown">
                     <a href="#">Usuarios</a>
                     <ul class="dropdown-content">
@@ -25,6 +29,7 @@
                     </ul>
                 </li>
 
+                <!-- Responsable -->
                 <li class="dropdown">
                     <a href="#">Responsable</a>
                     <ul class="dropdown-content">
@@ -34,16 +39,17 @@
                     </ul>
                 </li>
 
+                <!-- Productos -->
                 <li class="dropdown">
                     <a href="#">Productos</a>
                     <ul class="dropdown-content">
                         <li><a href="{{ url_for('rutas_producto.producto') }}">Productos</a></li>
                         <li><a href="{{ url_for('rutas_tipo_producto.tipo_producto') }}">Tipos de Producto</a></li>
                         <li><a href="{{ url_for('rutas_producto_entregable.producto_entregable') }}">Asociaciones Producto-Entregable</a></li>
-                        
                     </ul>
                 </li>
 
+                <!-- Proyectos -->
                 <li class="dropdown">
                     <a href="#">Proyectos</a>
                     <ul class="dropdown-content">
@@ -55,12 +61,13 @@
                         <li><a href="{{ url_for('rutas_presupuesto.presupuesto') }}">Presupuestos</a></li>
                     </ul>
                 </li>
-                
+
                 <li><a href="{{ url_for('rutas_entregable.entregable') }}">Entregables</a></li>
                 <li><a href="{{ url_for('rutas_variable_estrategica.variable_estrategica') }}">Variables Estratégicas</a></li>
 
+                <!-- Otra sección de Proyectos -->
                 <li class="dropdown">
-                    <a href="#">Proyectos</a>
+                    <a href="#">Más Proyectos</a>
                     <ul class="dropdown-content">
                         <li><a href="{{ url_for('rutas_actividad.actividad') }}">Actividad</a></li>
                         <li><a href="{{ url_for('rutas_archivo.archivo') }}">Archivo</a></li>
@@ -73,22 +80,23 @@
                     </ul>
                 </li>
 
-                
             </ul>
         </nav>
-    </header>
+    </aside>
 
-    <!-- Contenido principal -->
-    <main>
+    <!-- ======================================
+         CONTENIDO PRINCIPAL
+    ======================================= -->
+    <main class="contenido">
         <h1>{% block encabezado %}{% endblock %}</h1>
         <section>
             {% block contenido %}{% endblock %}
         </section>
     </main>
 
-    <!-- Pie de página -->
     <footer>
         <p>Proyecto Flask con Jinja2 - © 2025</p>
     </footer>
+
 </body>
 </html>
